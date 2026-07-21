@@ -9,40 +9,24 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html"><i class="fas fa-tooth"></i> ОртоГид</a>
+      <button class="nav-toggle" data-burger aria-label="Меню"><i class="fas fa-bars"></i></button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Обзор</a></li>
+        <li><a href="diagnostika.html">Диагностика</a></li>
+        <li><a href="apparaty.html">Аппараты</a></li>
+        <li><a href="etapy.html" class="active">Этапы</a></li>
+        <li><a href="spravochnik.html">Справочник</a></li>
+      </ul>
+    </div>
+  </header>
 
-  <div class="topbar">
-    <a class="brand" href="index.html" style="margin:0;">
-      <span class="brand-mark"><i class="fas fa-tooth"></i></span>
-      <span class="brand-text"><b>ОртоГид</b></span>
-    </a>
-    <button class="burger" data-burger aria-label="Меню"><i class="fas fa-bars"></i></button>
-  </div>
-  <div class="scrim"></div>
-
-  <div class="layout">
-    <aside class="sidebar">
-      <a class="brand" href="index.html">
-        <span class="brand-mark"><i class="fas fa-tooth"></i></span>
-        <span class="brand-text"><b>ОртоГид</b><span>Пособие по ортодонтии</span></span>
-      </a>
-      <nav class="nav">
-        <span class="nav-label">Разделы</span>
-        <a href="index.html"><i class="fas fa-house"></i> Главная</a>
-        <a href="diagnostika.html"><i class="fas fa-stethoscope"></i> Диагностика и классификация</a>
-        <a href="apparaty.html"><i class="fas fa-gears"></i> Аппараты и техника</a>
-        <a href="etapy.html" class="active"><i class="fas fa-list-check"></i> Этапы лечения</a>
-        <a href="spravochnik.html"><i class="fas fa-book-open"></i> Справочник терминов</a>
-      </nav>
-      <div class="sidebar-foot">
-        Учебный материал для студентов и врачей.<br />
-        © 2026 ОртоГид
-      </div>
-    </aside>
-
-    <main class="main">
+  <main class="main">
       <header class="hero">
         <div class="container">
-          <span class="eyebrow reveal"><i class="fas fa-list-check"></i> Раздел 3</span>
+          <span class="eyebrow reveal"><i class="fas fa-tasks"></i> Раздел 3</span>
           <h1 class="reveal">Этапы лечения</h1>
           <p class="lead reveal">Ортодонтическое лечение — последовательность этапов с собственными
             целями и критериями перехода к следующему шагу.</p>
@@ -114,7 +98,7 @@
           </ol>
 
           <div class="callout reveal">
-            <div class="t"><i class="fas fa-triangle-exclamation"></i> О ретенции</div>
+            <div class="t"><i class="fas fa-exclamation-triangle"></i> О ретенции</div>
             <p>Ретенционный период часто недооценивают. Без адекватной ретенции высок риск рецидива —
               возврата зубов к исходному положению. Продолжительность ретенции нередко сопоставима
               с длительностью активного лечения, а иногда рекомендуется пожизненно.</p>
@@ -133,13 +117,14 @@
           </ul>
         </div>
       </section>
+    </main>
 
-      <footer class="page-foot">
+    <footer class="page-foot">
+      <div class="inner">
         <span><i class="fas fa-tooth"></i> ОртоГид — учебное пособие по ортодонтии</span>
         <span>© 2026. Материал носит образовательный характер.</span>
-      </footer>
-    </main>
-  </div>
+      </div>
+    </footer>
 
   <script src="assets/js/main.js"></script>
 </body>

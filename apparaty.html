@@ -9,40 +9,24 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html"><i class="fas fa-tooth"></i> ОртоГид</a>
+      <button class="nav-toggle" data-burger aria-label="Меню"><i class="fas fa-bars"></i></button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Обзор</a></li>
+        <li><a href="diagnostika.html">Диагностика</a></li>
+        <li><a href="apparaty.html" class="active">Аппараты</a></li>
+        <li><a href="etapy.html">Этапы</a></li>
+        <li><a href="spravochnik.html">Справочник</a></li>
+      </ul>
+    </div>
+  </header>
 
-  <div class="topbar">
-    <a class="brand" href="index.html" style="margin:0;">
-      <span class="brand-mark"><i class="fas fa-tooth"></i></span>
-      <span class="brand-text"><b>ОртоГид</b></span>
-    </a>
-    <button class="burger" data-burger aria-label="Меню"><i class="fas fa-bars"></i></button>
-  </div>
-  <div class="scrim"></div>
-
-  <div class="layout">
-    <aside class="sidebar">
-      <a class="brand" href="index.html">
-        <span class="brand-mark"><i class="fas fa-tooth"></i></span>
-        <span class="brand-text"><b>ОртоГид</b><span>Пособие по ортодонтии</span></span>
-      </a>
-      <nav class="nav">
-        <span class="nav-label">Разделы</span>
-        <a href="index.html"><i class="fas fa-house"></i> Главная</a>
-        <a href="diagnostika.html"><i class="fas fa-stethoscope"></i> Диагностика и классификация</a>
-        <a href="apparaty.html" class="active"><i class="fas fa-gears"></i> Аппараты и техника</a>
-        <a href="etapy.html"><i class="fas fa-list-check"></i> Этапы лечения</a>
-        <a href="spravochnik.html"><i class="fas fa-book-open"></i> Справочник терминов</a>
-      </nav>
-      <div class="sidebar-foot">
-        Учебный материал для студентов и врачей.<br />
-        © 2026 ОртоГид
-      </div>
-    </aside>
-
-    <main class="main">
+  <main class="main">
       <header class="hero">
         <div class="container">
-          <span class="eyebrow reveal"><i class="fas fa-gears"></i> Раздел 2</span>
+          <span class="eyebrow reveal"><i class="fas fa-cogs"></i> Раздел 2</span>
           <h1 class="reveal">Аппараты и техника</h1>
           <p class="lead reveal">Ортодонтические аппараты различаются по способу фиксации и механизму
             действия. Разберём основные группы и их показания.</p>
@@ -59,15 +43,15 @@
           </div>
           <div class="grid cols-2" style="margin-top:26px;">
             <div class="card reveal"><span class="ic"><i class="fas fa-grip-lines"></i></span><h3>Несъёмная техника</h3><p>Брекет-системы, фиксируемые на зубах на весь период активного лечения. Наиболее точный контроль перемещений.</p></div>
-            <div class="card reveal"><span class="ic"><i class="fas fa-hand"></i></span><h3>Съёмные аппараты</h3><p>Пластинки и капы, которые пациент снимает самостоятельно. Чаще в сменном прикусе.</p></div>
-            <div class="card reveal"><span class="ic"><i class="fas fa-arrows-left-right-to-line"></i></span><h3>Функциональные</h3><p>Используют силу мышц для коррекции роста челюстей у растущих пациентов.</p></div>
+            <div class="card reveal"><span class="ic"><i class="fas fa-hand-paper"></i></span><h3>Съёмные аппараты</h3><p>Пластинки и капы, которые пациент снимает самостоятельно. Чаще в сменном прикусе.</p></div>
+            <div class="card reveal"><span class="ic"><i class="fas fa-arrows-alt-h"></i></span><h3>Функциональные</h3><p>Используют силу мышц для коррекции роста челюстей у растущих пациентов.</p></div>
             <div class="card reveal"><span class="ic"><i class="fas fa-align-center"></i></span><h3>Элайнеры</h3><p>Серия прозрачных кап, последовательно перемещающих зубы. Эстетичны и съёмны.</p></div>
           </div>
         </div>
       </section>
 
       <!-- Брекеты -->
-      <section class="section soft">
+      <section class="section panel">
         <div class="container">
           <div class="prose reveal">
             <h2 id="brekety">Брекет-системы</h2>
@@ -137,15 +121,15 @@
       </section>
 
       <!-- Элайнеры -->
-      <section class="section soft">
+      <section class="section panel">
         <div class="container">
           <div class="prose reveal">
             <h2 id="elainery">Прозрачные элайнеры</h2>
             <p>Элайнеры — серия индивидуальных прозрачных кап, каждая из которых перемещает зубы
               на небольшую величину. Планирование ведётся в цифровом протоколе (3D-сетап).</p>
             <div class="grid cols-2" style="margin-top:8px;">
-              <div class="card"><h3><i class="fas fa-thumbs-up" style="color:var(--brand)"></i>&nbsp; Преимущества</h3><p>Эстетичность, съёмность, комфорт гигиены, прогнозируемость по цифровому плану.</p></div>
-              <div class="card"><h3><i class="fas fa-circle-info" style="color:var(--brand)"></i>&nbsp; Ограничения</h3><p>Зависимость от дисциплины пациента (22 ч/сут), сложности при выраженных скелетных аномалиях.</p></div>
+              <div class="card"><h3><i class="fas fa-thumbs-up" style="color:var(--blue)"></i>&nbsp; Преимущества</h3><p>Эстетичность, съёмность, комфорт гигиены, прогнозируемость по цифровому плану.</p></div>
+              <div class="card"><h3><i class="fas fa-info-circle" style="color:var(--blue)"></i>&nbsp; Ограничения</h3><p>Зависимость от дисциплины пациента (22 ч/сут), сложности при выраженных скелетных аномалиях.</p></div>
             </div>
           </div>
 
@@ -155,13 +139,14 @@
           </ul>
         </div>
       </section>
+    </main>
 
-      <footer class="page-foot">
+    <footer class="page-foot">
+      <div class="inner">
         <span><i class="fas fa-tooth"></i> ОртоГид — учебное пособие по ортодонтии</span>
         <span>© 2026. Материал носит образовательный характер.</span>
-      </footer>
-    </main>
-  </div>
+      </div>
+    </footer>
 
   <script src="assets/js/main.js"></script>
 </body>

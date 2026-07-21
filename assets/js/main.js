@@ -1,16 +1,13 @@
 /* Ортодонтическое пособие — интерактив */
 (function () {
   "use strict";
+  var body = document.body;
 
   // Мобильное меню
-  var body = document.body;
   var burger = document.querySelector("[data-burger]");
-  var scrim = document.querySelector(".scrim");
-  function closeNav() { body.classList.remove("nav-open"); }
   if (burger) burger.addEventListener("click", function () { body.classList.toggle("nav-open"); });
-  if (scrim) scrim.addEventListener("click", closeNav);
-  document.querySelectorAll(".sidebar .nav a").forEach(function (a) {
-    a.addEventListener("click", closeNav);
+  document.querySelectorAll(".nav-menu a").forEach(function (a) {
+    a.addEventListener("click", function () { body.classList.remove("nav-open"); });
   });
 
   // Появление секций при прокрутке
@@ -20,7 +17,7 @@
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
       });
-    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    }, { threshold: 0.1, rootMargin: "0px 0px -6% 0px" });
     reveals.forEach(function (el) { io.observe(el); });
   } else {
     reveals.forEach(function (el) { el.classList.add("in"); });
