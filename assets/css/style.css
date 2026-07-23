@@ -232,6 +232,31 @@ tbody tr:last-child td { border-bottom: 0; }
 .page-foot i { color: var(--gray); }
 
 /* ========================================================================== */
+/*  Постерный hero «грифельный по молочному»                                  */
+/* ========================================================================== */
+.hero-poster { background: #f9f8f3; color: #2c2e31; text-align: left;
+  padding: 116px 22px 92px; }
+.hero-poster .container { max-width: 1120px; }
+.hero-poster .eyebrow { display: inline-block; color: #2c2e31; opacity: .5;
+  font-size: 13px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+  margin-bottom: 26px; }
+.hero-poster h1 {
+  font-family: "Helvetica Neue", Arial, "Liberation Sans", "DejaVu Sans", sans-serif;
+  text-transform: uppercase; font-weight: 800; color: #2c2e31;
+  font-size: clamp(50px, 11vw, 132px); line-height: .9; letter-spacing: -.01em;
+  transform: scaleX(.9); transform-origin: left; margin: 0 0 28px; }
+.hero-poster .lead { color: #2c2e31; opacity: .72; max-width: 52ch;
+  margin: 0 0 32px; font-size: clamp(18px, 2.2vw, 22px); }
+.hero-poster .actions { justify-content: flex-start; }
+.hero-poster .btn-primary { background: #2c2e31; color: #f9f8f3; }
+.hero-poster .btn-primary:hover { background: #1d1f22; color: #f9f8f3; }
+.hero-poster .btn-ghost { color: #2c2e31; border: 1px solid rgba(44,46,49,.35);
+  border-radius: 980px; padding: 8px 18px; }
+.hero-poster .btn-ghost:hover { color: #2c2e31; background: rgba(44,46,49,.06); text-decoration: none; }
+/* мягкий переход от молочного hero к белому контенту */
+.hero-poster + .section { border-top: 1px solid #ecebe4; }
+
+/* ========================================================================== */
 /*  Анимация появления                                                        */
 /* ========================================================================== */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1); }
