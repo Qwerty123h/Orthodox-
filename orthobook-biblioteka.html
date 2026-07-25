@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Библиотека — orthobook</title>
+  <meta name="description" content="Онлайн-библиотека учебников и атласов по ортодонтии." />
+  <link rel="stylesheet" href="assets/css/orthobook.css" />
+</head>
+<body class="ob">
+
+  <nav class="ob-nav">
+    <a href="orthobook.html">Обложка</a>
+    <a href="orthobook-osnovy.html">ОСНОВЫ</a>
+    <a href="orthobook-vidy.html">Виды</a>
+    <a href="orthobook-biblioteka.html" class="active">Библиотека</a>
+  </nav>
+
+  <div class="wrap">
+    <header class="hub-top">
+      <span>Библиотека</span>
+    </header>
+
+    <section class="lib">
+      <h1 class="display">Библиотека</h1>
+      <p class="lib-sub">Учебники, атласы и руководства по ортодонтии — в одном месте. Читайте онлайн или скачивайте.</p>
+      <div class="lib-count">Раздел наполняется · скоро больше материалов</div>
+
+      <!--
+        КАК ДОБАВИТЬ КНИГУ:
+        1) Положите обложку в images/orthobook/ (например book-cover-1.jpg)
+        2) Положите файл учебника в assets/library/ (например book-1.pdf)
+        3) Скопируйте карточку .book ниже и замените:
+           - обложку: <div class="book-cover"><img src="images/orthobook/ВАША-ОБЛОЖКА.jpg" alt=""></div>
+           - название/автора и ссылки «Читать/Скачать»
+      -->
+      <div class="lib-grid">
+
+        <article class="book">
+          <div class="book-cover gen">
+            <span class="k">Ортодонтия · Учебник</span>
+            <span class="t">Современная ортодонтия</span>
+          </div>
+          <div class="book-meta">
+            <div class="book-title">Современная ортодонтия</div>
+            <div class="book-author">— пример карточки</div>
+            <div class="book-actions"><a href="#">Читать</a><a href="#">Скачать</a></div>
+          </div>
+        </article>
+
+        <article class="book">
+          <div class="book-cover gen">
+            <span class="k">Диагностика</span>
+            <span class="t">Аномалии зубочелюстной системы</span>
+          </div>
+          <div class="book-meta">
+            <div class="book-title">Аномалии зубочелюстной системы</div>
+            <div class="book-author">— пример карточки</div>
+            <div class="book-actions"><a href="#">Читать</a><a href="#">Скачать</a></div>
+          </div>
+        </article>
+
+        <article class="book">
+          <div class="book-cover gen">
+            <span class="k">Биомеханика</span>
+            <span class="t">Перемещение зубов</span>
+          </div>
+          <div class="book-meta">
+            <div class="book-title">Биомеханика перемещения зубов</div>
+            <div class="book-author">— пример карточки</div>
+            <div class="book-actions"><a href="#">Читать</a><a href="#">Скачать</a></div>
+          </div>
+        </article>
+
+        <article class="book">
+          <div class="book-cover gen">
+            <span class="k">Атлас</span>
+            <span class="t">Ортодонтические аппараты</span>
+          </div>
+          <div class="book-meta">
+            <div class="book-title">Атлас ортодонтических аппаратов</div>
+            <div class="book-author">— пример карточки</div>
+            <div class="book-actions"><a href="#">Читать</a><a href="#">Скачать</a></div>
+          </div>
+        </article>
+
+        <article class="book">
+          <div class="book-cover gen">
+            <span class="k">Руководство</span>
+            <span class="t">Цефалометрия на практике</span>
+          </div>
+          <div class="book-meta">
+            <div class="book-title">Цефалометрия на практике</div>
+            <div class="book-author">— пример карточки</div>
+            <div class="book-actions"><a href="#">Читать</a><a href="#">Скачать</a></div>
+          </div>
+        </article>
+
+        <article class="book">
+          <div class="book-cover gen">
+            <span class="k">Клинические случаи</span>
+            <span class="t">Разбор кейсов</span>
+          </div>
+          <div class="book-meta">
+            <div class="book-title">Клинические случаи в ортодонтии</div>
+            <div class="book-author">— пример карточки</div>
+            <div class="book-actions"><a href="#">Читать</a><a href="#">Скачать</a></div>
+          </div>
+        </article>
+
+        <!-- заглушка для будущих учебников -->
+        <div class="book-add">
+          <span><span class="plus">＋</span>Добавить учебник<br />обложка + файл</span>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="hub-foot">
+      <span>Пришлите учебники и обложки — оформлю карточки красиво</span>
+      <span>Грифельный по молочному · #2C2E31 / #F9F8F3</span>
+    </footer>
+  </div>
+
+  <script src="assets/js/orthobook.js"></script>
+</body>
+</html>
