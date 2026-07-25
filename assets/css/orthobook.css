@@ -1,0 +1,163 @@
+/* ==========================================================================
+   ORTHOBOOK — мини-сайт в стиле «грифельный по молочному»
+   Чистый редактируемый CSS. Палитра и типографика — в :root.
+   ========================================================================== */
+:root {
+  --milk:    #f9f8f3;   /* молочный фон */
+  --slate:   #2c2e31;   /* графит (текст/акцент) */
+  --slate-d: #1d1f22;   /* тёмный при наведении */
+  --muted:   #8a8b85;   /* приглушённый текст на молочном */
+  --muted-d: #a7a49b;   /* приглушённый текст на графите */
+  --line:    #e5e3db;   /* тонкие линии */
+
+  --ff: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  /* Постерный дисплейный шрифт: плотный гротеск; при отсутствии — жирный + сжатие */
+  --ff-display: "Oswald", "Arial Narrow", "Helvetica Neue", var(--ff);
+
+  --maxw: 1160px;
+  --radius: 18px;
+}
+
+* , *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; font-family: var(--ff);
+  background: var(--milk); color: var(--slate);
+  font-size: 17px; line-height: 1.5; letter-spacing: -.01em;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* Дисплейный заголовок (постерный, капсом, плотный) */
+.display {
+  font-family: var(--ff-display);
+  text-transform: uppercase; font-weight: 800;
+  letter-spacing: -.01em; line-height: .9;
+  transform: scaleX(.92); transform-origin: left;
+  margin: 0;
+}
+
+/* ---------- Плавающее меню между экранами ---------- */
+.ob-nav {
+  position: fixed; top: 14px; left: 50%; transform: translateX(-50%);
+  z-index: 100; display: flex; gap: 4px; padding: 5px;
+  border-radius: 999px; background: rgba(44,46,49,.9);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.28);
+}
+.ob-nav a {
+  font-size: 13px; font-weight: 600; padding: 7px 16px; border-radius: 999px;
+  color: var(--milk); white-space: nowrap; transition: background .15s, color .15s;
+}
+.ob-nav a:hover { background: rgba(249,248,243,.16); }
+.ob-nav a.active { background: var(--milk); color: var(--slate); }
+
+/* ---------- Кнопки ---------- */
+.cta {
+  display: inline-block; font-weight: 600; font-size: 14px; letter-spacing: .08em;
+  text-transform: uppercase; padding: 14px 30px; border: 1px solid var(--slate);
+  color: var(--slate); background: transparent; transition: background .18s, color .18s;
+}
+.cta:hover { background: var(--slate); color: var(--milk); }
+.cta-dark {
+  display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 13px;
+  letter-spacing: .06em; text-transform: uppercase; padding: 14px 22px;
+  background: var(--milk); color: var(--slate); transition: transform .15s, background .18s;
+}
+.cta-dark:hover { transform: translateX(2px); background: #fff; }
+
+/* ==========================================================================
+   1. ОБЛОЖКА
+   ========================================================================== */
+.cover { position: relative; min-height: 100vh; display: grid; place-items: center; overflow: hidden; }
+.cover-bg {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  filter: grayscale(1) contrast(.9) brightness(1.18); opacity: .5; z-index: 0;
+}
+.cover-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(var(--milk), rgba(249,248,243,.35), var(--milk)); }
+.cover-inner { position: relative; z-index: 1; text-align: center; }
+.wordmark {
+  font-family: var(--ff-display); font-weight: 800; font-size: clamp(48px, 9vw, 104px);
+  color: var(--slate); letter-spacing: -.03em; margin: 0 0 26px;
+}
+.cover-inner .cta { background: rgba(249,248,243,.6); }
+
+/* ==========================================================================
+   2. ХАБ «ОСНОВЫ»
+   ========================================================================== */
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 40px; }
+.hub-top { display: flex; justify-content: space-between; align-items: center;
+  padding: 30px 0 0; font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.hub-top .r { color: var(--muted); }
+.hub { padding: 56px 0 40px; }
+.hub h1.display { font-size: clamp(70px, 15vw, 190px); margin-bottom: 18px; }
+.hub-sub { max-width: 46ch; color: var(--muted); font-size: clamp(16px,2vw,19px); margin: 0 0 44px; }
+
+/* Аккордеон-колонки */
+.cols { display: flex; gap: 10px; height: 460px; }
+.col {
+  position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--milk); flex: 0 0 92px; cursor: pointer;
+  transition: flex-basis .45s cubic-bezier(.22,.61,.36,1), background .3s;
+}
+.col.open { flex: 1 1 auto; background: var(--slate); color: var(--milk); border-color: var(--slate); cursor: default; }
+.col-head { display: flex; align-items: center; gap: 14px; padding: 26px; position: relative; z-index: 2; }
+.col-head .num { font-family: var(--ff-display); font-weight: 800; font-size: 26px; }
+.col-head .col-kicker { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; opacity: .8; }
+.col-head .col-arrow { margin-left: auto; font-size: 20px; opacity: .7; }
+/* вертикальная подпись у свёрнутой колонки */
+.col-label {
+  position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%) rotate(180deg);
+  writing-mode: vertical-rl; font-family: var(--ff-display); font-weight: 800; font-size: 26px;
+  text-transform: uppercase; letter-spacing: .02em; white-space: nowrap;
+}
+.col.open .col-label { display: none; }
+.col-body { padding: 8px 26px 26px; display: none; max-width: 640px; }
+.col.open .col-body { display: block; }
+.col-body h2.display { font-size: clamp(48px, 8vw, 112px); margin: 30px 0 16px; }
+.col-body p { color: var(--muted-d); max-width: 52ch; }
+.col-actions { display: flex; align-items: center; gap: 18px; margin-top: 26px; flex-wrap: wrap; }
+.col-actions .meta { font-size: 13px; color: var(--muted-d); letter-spacing: .04em; }
+/* светлые (свёрнутые) колонки: подпись графитом */
+.col:not(.open) .col-head .col-kicker, .col:not(.open) .col-head .col-arrow { color: var(--slate); }
+
+.hub-foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+  padding: 28px 0 40px; font-size: 13px; color: var(--muted); }
+
+/* ==========================================================================
+   3. ВИДЫ (галерея с фото)
+   ========================================================================== */
+.gallery { display: flex; gap: 14px; height: 100vh; padding: 14px; }
+.tile {
+  position: relative; overflow: hidden; border-radius: 22px; cursor: pointer;
+  flex: 0 0 15%; background-size: cover; background-position: center;
+  transition: flex-basis .5s cubic-bezier(.22,.61,.36,1), filter .4s;
+  filter: grayscale(.15);
+}
+.tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 40%, rgba(0,0,0,.35)); }
+.tile.open { flex: 1 1 auto; filter: none; }
+.tile-label {
+  position: absolute; z-index: 1; left: 50%; top: 50%; transform: translate(-50%,-50%);
+  font-family: var(--ff-display); font-weight: 800; font-size: clamp(22px, 4vw, 52px);
+  text-transform: uppercase; color: #fff; letter-spacing: .01em; white-space: nowrap;
+  text-shadow: 0 2px 20px rgba(0,0,0,.5);
+}
+/* у свёрнутых плиток подпись вертикальная — чтобы не обрезалась */
+.tile:not(.open) .tile-label {
+  writing-mode: vertical-rl; transform: translate(-50%,-50%) rotate(180deg);
+  font-size: clamp(20px, 2.4vw, 30px);
+}
+
+/* ---------- адаптив ---------- */
+@media (max-width: 820px) {
+  .wrap { padding: 0 20px; }
+  .cols { flex-direction: column; height: auto; }
+  .col { flex: none; }
+  .col:not(.open) { min-height: 84px; }
+  .col-label { position: static; writing-mode: horizontal-tb; transform: none; padding: 0 26px 22px; display: block; }
+  .gallery { flex-direction: column; height: auto; }
+  .tile { flex: none; min-height: 180px; }
+  .tile.open { min-height: 62vh; }
+  .tile:not(.open) .tile-label { writing-mode: horizontal-tb; transform: translate(-50%,-50%); }
+}
