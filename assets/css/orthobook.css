@@ -159,6 +159,14 @@ img { display: block; max-width: 100%; }
 .lib-sub { max-width: 52ch; color: var(--muted); font-size: clamp(16px,2vw,19px); margin: 0 0 8px; }
 .lib-count { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 
+/* кнопка перехода в телеграм-канал */
+.lib-actions { margin-top: 22px; }
+.tg-btn { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px;
+  padding: 13px 22px; border-radius: 999px; background: var(--slate); color: var(--milk);
+  transition: transform .15s ease, background .2s ease; }
+.tg-btn:hover { background: var(--slate-d); transform: translateY(-2px); }
+.tg-btn svg { width: 18px; height: 18px; flex: 0 0 auto; }
+
 .lib-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 34px 26px; margin-top: 44px; }
 .book { display: flex; flex-direction: column; }
